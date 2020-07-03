@@ -6,9 +6,8 @@ import {
   MenuItem,
   makeStyles,
 } from "@material-ui/core";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { fetchCountries } from "../../store/actions";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchCountries, updateCountry } from "../../store/actions";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -20,8 +19,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Countries = ({ country, setCountry }) => {
+const Countries = () => {
   const classes = useStyles();
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -29,9 +29,10 @@ const Countries = ({ country, setCountry }) => {
   }, [dispatch]);
 
   const handleChange = (event) => {
-    setCountry(event.target.value);
+    dispatch(updateCountry(event.target.value));
   };
 
+  const { selectedCountry: country } = useSelector((state) => state.countries);
   const { data, error, loading } = useSelector((state) => state.countries);
   if (loading && !data && !error) return <div>Loading...</div>;
 

@@ -1,8 +1,9 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk, createAction } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const BASE_URL = "https://covid19.mathdro.id/api";
 
+//Covid-Data
 export const fetchDataByCountryOrDefault = createAsyncThunk(
   "covid-data/fetchDataByCountry",
   async (country, thunkAPI) => {
@@ -20,6 +21,7 @@ export const fetchDataByCountryOrDefault = createAsyncThunk(
   }
 );
 
+//Countries
 export const fetchCountries = createAsyncThunk(
   "countries/fetchCountries",
   async (thunkAPI) => {
@@ -35,6 +37,9 @@ export const fetchCountries = createAsyncThunk(
   }
 );
 
+export const updateCountry = createAction("countries/updateCountry");
+
+// Daily-Data
 export const fetchDailyData = createAsyncThunk(
   "daily-data/fetchDailyData",
   async (thunkAPI) => {
