@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Layout from "../components/Layout";
 import { makeStyles } from "@material-ui/core";
 import Chart from "../components/Chart";
-import Summary from "../components/Summary";
+import CovidSummary from "../components/CovidSummary";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchDataByCountryOrDefault } from "../store/actions";
 import CountryPicker from "../components/CountryPicker";
@@ -32,7 +32,7 @@ function Home() {
     <Layout>
       <div className={styles.root}>
         <section>
-          <Summary className={styles.spacing} />
+          <CovidSummary className={styles.spacing} />
         </section>
         <section className={styles.spacing}>
           <CountryPicker country={selectedCountry} />

@@ -3,7 +3,7 @@ import { Grid } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import CardItem from "./CardItem";
 
-const CovidCard = () => {
+const CovidSummary = () => {
   const { data, loading, error } = useSelector((state) => state.covidData);
   if (loading && !data.confirmed && !error) return <div>Loading...</div>;
 
@@ -43,4 +43,4 @@ const CovidCard = () => {
   );
 };
 
-export default CovidCard;
+export default CovidSummary;
