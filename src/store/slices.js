@@ -1,5 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchDataByCountry, fetchCountries, fetchDailyData } from "./actions";
+import {
+  fetchDataByCountryOrDefault,
+  fetchCountries,
+  fetchDailyData,
+} from "./actions";
 
 export const covidSlice = createSlice({
   name: "covid-data",
@@ -10,14 +14,14 @@ export const covidSlice = createSlice({
   },
   reducers: {},
   extraReducers: {
-    [fetchDataByCountry.fulfilled]: (state, action) => {
+    [fetchDataByCountryOrDefault.fulfilled]: (state, action) => {
       state["data"] = action.payload;
       state.loading = false;
     },
-    [fetchDataByCountry.pending]: (state, action) => {
+    [fetchDataByCountryOrDefault.pending]: (state, action) => {
       state.loading = true;
     },
-    [fetchDataByCountry.rejected]: (state, action) => {
+    [fetchDataByCountryOrDefault.rejected]: (state, action) => {
       state.loading = false;
       state.error = action.payload;
     },

@@ -3,7 +3,7 @@ import axios from "axios";
 
 const BASE_URL = "https://covid19.mathdro.id/api";
 
-export const fetchDataByCountry = createAsyncThunk(
+export const fetchDataByCountryOrDefault = createAsyncThunk(
   "covid-data/fetchDataByCountry",
   async (country, thunkAPI) => {
     try {
