@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core";
 import Chart from "../components/Chart";
 import CovidCard from "../components/Card";
 import { useDispatch } from "react-redux";
-import { fetchDataByCountryOrDefault, fetchDailyData } from "../store/actions";
+import { fetchDataByCountryOrDefault } from "../store/actions";
 import Countries from "../components/Countries";
 
 const useStyles = makeStyles((theme) => ({

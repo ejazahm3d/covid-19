@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import {
-  Input,
   FormControl,
   InputLabel,
   Select,
@@ -34,7 +33,7 @@ const Countries = ({ country, setCountry }) => {
   };
 
   const { data, error, loading } = useSelector((state) => state.countries);
-  if (loading) return <div>Loading...</div>;
+  if (loading && !data && !error) return <div>Loading...</div>;
 
   return (
     <div>

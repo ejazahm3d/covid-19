@@ -1,11 +1,11 @@
 import React from "react";
-import { Grid, Container } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import CardItem from "./CardItem";
 
 const CovidCard = () => {
   const { data, loading, error } = useSelector((state) => state.covidData);
-  if (loading && !data.confirmed) return <div>Loading...</div>;
+  if (loading && !data.confirmed && !error) return <div>Loading...</div>;
 
   const { confirmed, recovered, deaths, lastUpdate } = data;
 
