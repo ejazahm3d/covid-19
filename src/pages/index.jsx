@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Layout from "../components/Layout";
 import { makeStyles, Typography } from "@material-ui/core";
 import { useDispatch } from "react-redux";
-import { fetchDataByCountry } from "../store";
+import { fetchDataByCountry } from "../store/actions";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Home() {
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetchDataByCountry());
   }, [dispatch]);

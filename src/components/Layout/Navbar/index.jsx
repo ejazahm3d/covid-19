@@ -39,7 +39,7 @@ export default function Navbar() {
           <Typography variant="h6" className={classes.title}>
             News
           </Typography>
-          <Button variant="contained" color="secondary">
+          <Button variant="contained" color="default">
             Login
           </Button>
         </Toolbar>
