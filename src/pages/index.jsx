@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Home() {
   const { selectedCountry } = useSelector((state) => state.countries);
+  const { data, loading } = useSelector((state) => state.covidData);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -38,7 +39,7 @@ function Home() {
           <CountryPicker country={selectedCountry} />
         </section>
         <section className={styles.spacing}>
-          <Chart />
+          <Chart data={data} loading={loading} country={selectedCountry} />
         </section>
       </div>
     </Layout>
