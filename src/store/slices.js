@@ -32,7 +32,7 @@ export const countriesSlice = createSlice({
   name: "countries",
   initialState: {
     loading: false,
-    data: {},
+    data: [],
     error: {},
   },
   reducers: {},
