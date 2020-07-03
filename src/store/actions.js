@@ -21,7 +21,7 @@ export const fetchDataByCountry = createAsyncThunk(
 );
 
 export const fetchCountries = createAsyncThunk(
-  "covid-data/fetchCountries",
+  "countries/fetchCountries",
   async (thunkAPI) => {
     try {
       const {
@@ -36,7 +36,7 @@ export const fetchCountries = createAsyncThunk(
 );
 
 export const fetchDailyData = createAsyncThunk(
-  "covid-data/fetchDailyData",
+  "daily-data/fetchDailyData",
   async (thunkAPI) => {
     try {
       const { data } = await axios.get(`${BASE_URL}/daily`);
