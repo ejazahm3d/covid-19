@@ -30,8 +30,6 @@ export const covidSlice = createSlice({
   },
 });
 
-console.log(covidSlice);
-
 // Countries
 export const countriesSlice = createSlice({
   name: "countries",
