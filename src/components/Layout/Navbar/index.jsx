@@ -4,10 +4,9 @@ import {
   AppBar,
   Toolbar,
   Typography,
-  Button,
   IconButton,
 } from "@material-ui/core";
-import { Menu as MenuIcon } from "@material-ui/icons";
+import { GitHub } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,20 +27,25 @@ export default function Navbar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
           <Typography variant="h6" className={classes.title}>
-            News
+            Covid-19 App
           </Typography>
-          <Button variant="contained" color="default">
-            Login
-          </Button>
+          {/* <Button
+            href="https://github.com/ejazahm3d/covid-19"
+            target="_blank"
+            variant="contained"
+            color="default"
+          >
+            Github
+          </Button> */}
+          <IconButton
+            color="inherit"
+            href="https://github.com/ejazahm3d/covid-19"
+            target="_blank"
+            rel="noopener"
+          >
+            <GitHub fontSize="large" />
+          </IconButton>
         </Toolbar>
       </AppBar>
     </div>

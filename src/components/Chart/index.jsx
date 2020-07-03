@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from "react-redux";
 const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
   const dispatch = useDispatch();
   const { data: dailyData } = useSelector((state) => state.dailyData);
-  // const [dailyData, setDailyData] = useState({});
 
   useEffect(() => {
     dispatch(fetchDailyData());
