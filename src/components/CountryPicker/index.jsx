@@ -46,6 +46,7 @@ const Countries = () => {
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={country}
+          style={{ width: "15rem" }}
           className={classes.selectEmpty}
           displayEmpty
           onChange={handleChange}

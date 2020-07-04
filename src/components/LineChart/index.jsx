@@ -37,7 +37,7 @@ const LineChart = () => {
     />
   ) : null;
 
-  return <div style={{ width: "90vw" }}>{lineChart}</div>;
+  return <div style={{ width: "100%" }}>{lineChart}</div>;
 };
 
 export default LineChart;

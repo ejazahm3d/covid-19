@@ -8,6 +8,7 @@ import {
 } from "@material-ui/core";
 import { Bar, Pie } from "react-chartjs-2";
 import { lightBlue, lightGreen, red } from "@material-ui/core/colors";
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -19,7 +20,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const PieBarChart = ({ data: { confirmed, recovered, deaths }, country }) => {
+const ChartSelector = () => {
+  const { selectedCountry: country } = useSelector((state) => state.countries);
+
+  const {
+    data: { confirmed, recovered, deaths },
+  } = useSelector((state) => state.covidData);
+
   const classes = useStyles();
 
   const [selectedChart, setSelectedChart] = useState("bar");
@@ -27,6 +34,7 @@ const PieBarChart = ({ data: { confirmed, recovered, deaths }, country }) => {
   const handleChange = (event) => {
     setSelectedChart(event.target.value);
   };
+
   const barChart = confirmed ? (
     <Bar
       data={{
@@ -85,11 +93,11 @@ const PieBarChart = ({ data: { confirmed, recovered, deaths }, country }) => {
           </Select>
         </FormControl>
       </div>
-      <div style={{ width: "90vw" }}>
+      <div style={{ width: "100%" }}>
         {selectedChart === "pie" ? pieChart : barChart}
       </div>
     </div>
   );
 };
 
-export default PieBarChart;
+export default ChartSelector;

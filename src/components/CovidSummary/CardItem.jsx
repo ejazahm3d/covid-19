@@ -8,8 +8,6 @@ const CardItem = ({ cardItem, lastUpdate }) => {
     <Grid
       style={{ backgroundColor, margin: "1rem", minWidth: "15rem" }}
       item
-      xs={10}
-      md={3}
       component={Card}
     >
       <CardContent>
