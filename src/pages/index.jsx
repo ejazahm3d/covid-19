@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Layout from "../components/Layout";
-import { makeStyles, Grid, Container } from "@material-ui/core";
-import Chart from "../components/Chart";
+import { makeStyles, Container, Grid } from "@material-ui/core";
+import LineChart from "../components/LineChart";
 import CovidSummary from "../components/CovidSummary";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchDataByCountryOrDefault } from "../store/actions";
@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
 
 function Home() {
   const { selectedCountry } = useSelector((state) => state.countries);
-  const { data, loading } = useSelector((state) => state.covidData);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -37,10 +36,14 @@ function Home() {
             <CovidSummary className={styles.spacing} />
           </section>
           <section className={styles.spacing}>
-            <CountryPicker country={selectedCountry} />
+            <CountryPicker />
           </section>
           <section className={styles.spacing}>
-            <Chart data={data} loading={loading} country={selectedCountry} />
+            <Grid container>
+              <Grid item>
+                <LineChart />
+              </Grid>
+            </Grid>
           </section>
         </div>
       </Container>

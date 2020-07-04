@@ -2,6 +2,7 @@ import { createAsyncThunk, createAction } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const BASE_URL = "https://covid19.mathdro.id/api";
+const BASE_URL_2nd = "https://api.covid19api.com";
 
 //Covid-Data
 export const fetchDataByCountryOrDefault = createAsyncThunk(
@@ -42,15 +43,28 @@ export const updateCountry = createAction("countries/updateCountry");
 // Daily-Data
 export const fetchDailyData = createAsyncThunk(
   "daily-data/fetchDailyData",
-  async (thunkAPI) => {
+  async (country, thunkAPI) => {
     try {
-      const { data } = await axios.get(`${BASE_URL}/daily`);
+      if (!country) {
+        const { data } = await axios.get(`${BASE_URL}/daily`);
 
-      return data.map(({ confirmed, deaths, recovered, reportDate: date }) => ({
-        confirmed: confirmed.total,
-        deaths: deaths.total,
-        date,
-      }));
+        return data.map(
+          ({ confirmed, deaths, recovered, reportDate: date }) => ({
+            confirmed: confirmed.total,
+            deaths: deaths.total,
+            date,
+          })
+        );
+      } else {
+        const { data } = await axios.get(
+          `${BASE_URL_2nd}/total/dayone/country/${country}`
+        );
+        return data.map(({ Confirmed, Deaths, Recovered, Date: date }) => ({
+          confirmed: Confirmed,
+          deaths: Deaths,
+          date,
+        }));
+      }
     } catch (error) {
       return error;
     }
