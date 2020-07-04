@@ -42,11 +42,11 @@ function Home() {
           </section>
           <section className={styles.spacing}>
             <Grid>
-              <Grid item sm={12} md={5}>
-                <LineChart />
-              </Grid>
-              <Grid item sm={12} md={5}>
+              <Grid item sm={12}>
                 <PieBarChart data={data} country />
+              </Grid>
+              <Grid style={{ magrinTop: "5rem" }} item sm={12}>
+                <LineChart />
               </Grid>
             </Grid>
           </section>
