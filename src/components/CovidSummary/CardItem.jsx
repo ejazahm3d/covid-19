@@ -2,14 +2,21 @@ import React from "react";
 import { Grid, CardContent, Typography, Card } from "@material-ui/core";
 import CountUp from "react-countup";
 
-const CardItem = ({ name, count, description, lastUpdate }) => {
+const CardItem = ({ cardItem, lastUpdate }) => {
+  const { name, count, backgroundColor, textColor } = cardItem;
   return (
-    <Grid item xs={12} md={3} component={Card}>
+    <Grid
+      style={{ backgroundColor, margin: "1rem", minWidth: "15rem" }}
+      item
+      xs={10}
+      md={3}
+      component={Card}
+    >
       <CardContent>
-        <Typography color="textSecondary" gutterBottom>
-          {name}
+        <Typography color="textSecondary" variant="h5" gutterBottom>
+          {name ? name : ""}
         </Typography>
-        <Typography variant="h5" component="h2">
+        <Typography style={{ color: textColor }} variant="h4" component="h2">
           <CountUp
             start={0}
             end={count ? count : 1}
@@ -18,10 +25,7 @@ const CardItem = ({ name, count, description, lastUpdate }) => {
           />
         </Typography>
         <Typography color="textSecondary">
-          {new Date(lastUpdate).toDateString()}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {description}
+          Updated on {new Date(lastUpdate).toDateString()}
         </Typography>
       </CardContent>
     </Grid>
