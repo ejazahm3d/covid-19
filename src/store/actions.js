@@ -46,7 +46,7 @@ export const fetchDailyData = createAsyncThunk(
     try {
       const { data } = await axios.get(`${BASE_URL}/daily`);
 
-      return data.map(({ confirmed, deaths, reportDate: date }) => ({
+      return data.map(({ confirmed, deaths, recovered, reportDate: date }) => ({
         confirmed: confirmed.total,
         deaths: deaths.total,
         date,

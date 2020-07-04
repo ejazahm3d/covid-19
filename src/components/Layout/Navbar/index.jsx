@@ -30,14 +30,6 @@ export default function Navbar() {
           <Typography variant="h6" className={classes.title}>
             Covid-19 App
           </Typography>
-          {/* <Button
-            href="https://github.com/ejazahm3d/covid-19"
-            target="_blank"
-            variant="contained"
-            color="default"
-          >
-            Github
-          </Button> */}
           <IconButton
             color="inherit"
             href="https://github.com/ejazahm3d/covid-19"

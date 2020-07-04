@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Line, Bar } from "react-chartjs-2";
 import { fetchDailyData } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
+import { lightBlue, lightGreen, red } from "@material-ui/core/colors";
 
 const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
   const dispatch = useDispatch();
@@ -18,11 +19,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
         datasets: [
           {
             label: "People",
-            backgroundColor: [
-              "rgba(0, 0, 255, 0.5)",
-              "rgba(0, 255, 0, 0.5)",
-              "rgba(255, 0, 0, 0.5)",
-            ],
+            backgroundColor: [lightBlue[500], lightGreen[500], red[400]],
             data: [confirmed.value, recovered.value, deaths.value],
           },
         ],
@@ -42,14 +39,13 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
           {
             data: dailyData.map((data) => data.confirmed),
             label: "Infected",
-            borderColor: "#3333ff",
+            borderColor: lightBlue[500],
             fill: true,
           },
           {
             data: dailyData.map((data) => data.deaths),
             label: "Deaths",
-            borderColor: "red",
-            backgroundColor: "rgba(255, 0, 0, 0.5)",
+            borderColor: red[400],
             fill: true,
           },
         ],
@@ -57,7 +53,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
     />
   ) : null;
 
-  return <div style={{ width: "80vw" }}>{country ? barChart : lineChart}</div>;
+  return <div style={{ width: "90vw" }}>{country ? barChart : lineChart}</div>;
 };
 
 export default Chart;
