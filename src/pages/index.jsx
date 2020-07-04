@@ -31,11 +31,11 @@ function Home() {
       <Container>
         <div className={styles.root}>
           <section>
-            <Grid container>
+            <Grid container justify="center">
               <Grid sm={12} md={6}>
                 <CovidSummary className={styles.spacing} />
               </Grid>
-              <Grid style={{ marginTop: "2rem" }} sm={12} md={6}>
+              <Grid style={{ marginTop: "2rem" }} md={6}>
                 <ChartSelector />
               </Grid>
             </Grid>
