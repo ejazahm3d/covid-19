@@ -6,6 +6,7 @@ import CovidSummary from "../components/CovidSummary";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchDataByCountryOrDefault } from "../store/actions";
 import CountryPicker from "../components/CountryPicker";
+import PieBarChart from "../components/PieBarChart";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Home() {
   const { selectedCountry } = useSelector((state) => state.countries);
+  const { data } = useSelector((state) => state.covidData);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -39,9 +41,12 @@ function Home() {
             <CountryPicker />
           </section>
           <section className={styles.spacing}>
-            <Grid container>
-              <Grid item>
+            <Grid>
+              <Grid item sm={12} md={5}>
                 <LineChart />
+              </Grid>
+              <Grid item sm={12} md={5}>
+                <PieBarChart data={data} country />
               </Grid>
             </Grid>
           </section>

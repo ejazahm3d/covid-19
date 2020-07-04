@@ -1,7 +1,8 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
+import { lightBlue, lightGreen, red } from "@material-ui/core/colors";
 
-const PieBarChart = () => {
+const PieBarChart = ({ data: { confirmed, recovered, deaths }, country }) => {
   const barChart = confirmed ? (
     <Bar
       data={{
@@ -20,7 +21,7 @@ const PieBarChart = () => {
       }}
     />
   ) : null;
-  return <div></div>;
+  return <div style={{ width: "90vw" }}>{barChart}</div>;
 };
 
 export default PieBarChart;
