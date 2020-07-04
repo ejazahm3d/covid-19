@@ -19,7 +19,7 @@ const CardItem = ({ cardItem, lastUpdate }) => {
         <Typography style={{ color: textColor }} variant="h4" component="h2">
           <CountUp
             start={0}
-            end={count ? count : 1}
+            end={count ? count : 0}
             duration={2.75}
             separator=","
           />
