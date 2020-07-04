@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Layout from "../components/Layout";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, Grid, Container } from "@material-ui/core";
 import Chart from "../components/Chart";
 import CovidSummary from "../components/CovidSummary";
 import { useDispatch, useSelector } from "react-redux";
@@ -31,17 +31,19 @@ function Home() {
   const styles = useStyles();
   return (
     <Layout>
-      <div className={styles.root}>
-        <section>
-          <CovidSummary className={styles.spacing} />
-        </section>
-        <section className={styles.spacing}>
-          <CountryPicker country={selectedCountry} />
-        </section>
-        <section className={styles.spacing}>
-          <Chart data={data} loading={loading} country={selectedCountry} />
-        </section>
-      </div>
+      <Container>
+        <div className={styles.root}>
+          <section>
+            <CovidSummary className={styles.spacing} />
+          </section>
+          <section className={styles.spacing}>
+            <CountryPicker country={selectedCountry} />
+          </section>
+          <section className={styles.spacing}>
+            <Chart data={data} loading={loading} country={selectedCountry} />
+          </section>
+        </div>
+      </Container>
     </Layout>
   );
 }
