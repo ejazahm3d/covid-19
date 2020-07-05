@@ -32,7 +32,6 @@ function Home() {
           <Grid item className={styles.spacing}>
             <CountryPicker />
           </Grid>
-
           <SummaryBlock />
           <ChartsBlock />
         </Grid>

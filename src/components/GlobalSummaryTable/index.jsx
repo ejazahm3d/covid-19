@@ -12,7 +12,7 @@ import {
   TablePagination,
   TableRow,
 } from "@material-ui/core";
-import { lightBlue, lightGreen, red, yellow } from "@material-ui/core/colors";
+import { lightGreen, red, yellow } from "@material-ui/core/colors";
 import sortBy from "lodash.sortby";
 
 const useStyles = makeStyles({
