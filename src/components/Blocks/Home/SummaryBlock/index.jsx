@@ -2,7 +2,6 @@ import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import CovidSummary from "../../../CovidSummary";
 import GlobalSummaryTable from "../../../GlobalSummaryTable";
-import { motion, AnimatePresence } from "framer-motion";
 
 const SummaryBlock = () => {
   return (
