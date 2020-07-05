@@ -26,8 +26,10 @@ const HeroBlock = () => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 2 }}
         style={{
-          width: "60%",
+          width: "80%",
+          height: "18rem",
           objectFit: "cover",
+          objectPosition: "0 0",
           marginBottom: "3rem",
         }}
         src={medicalImage}
