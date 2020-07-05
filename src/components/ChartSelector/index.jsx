@@ -88,8 +88,8 @@ const ChartSelector = () => {
             displayEmpty
             onChange={handleChange}
           >
-            <MenuItem value="pie">Pie Chart</MenuItem>
             <MenuItem value="bar">Bar Chart</MenuItem>
+            <MenuItem value="pie">Pie Chart</MenuItem>
           </Select>
         </FormControl>
       </div>
