@@ -5,7 +5,15 @@ import CountUp from "react-countup";
 const CardItem = ({ cardItem, lastUpdate }) => {
   const { name, count, backgroundColor, textColor } = cardItem;
   return (
-    <Grid style={{ backgroundColor, margin: "0.5rem" }} item component={Card}>
+    <Grid
+      xs={12}
+      sm={12}
+      md={12}
+      lg={12}
+      style={{ backgroundColor, margin: "0.5rem" }}
+      item
+      component={Card}
+    >
       <CardContent>
         <Typography color="textSecondary" variant="h6" gutterBottom>
           {name ? name : ""}

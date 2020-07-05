@@ -5,6 +5,7 @@ import {
   Select,
   MenuItem,
   makeStyles,
+  Typography,
 } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchCountries, updateCountry } from "../../store/actions";
@@ -38,6 +39,13 @@ const Countries = () => {
 
   return (
     <div>
+      <Typography
+        style={{ textAlign: "center" }}
+        variant="h6"
+        color="textSecondary"
+      >
+        Select Country
+      </Typography>
       <FormControl className={classes.formControl}>
         <InputLabel shrink id="demo-simple-select-label">
           Country
@@ -48,6 +56,7 @@ const Countries = () => {
           value={country}
           style={{ width: "15rem" }}
           className={classes.selectEmpty}
+          variant="outlined"
           displayEmpty
           onChange={handleChange}
         >

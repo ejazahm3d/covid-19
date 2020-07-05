@@ -5,6 +5,7 @@ import {
   Select,
   MenuItem,
   makeStyles,
+  Typography,
 } from "@material-ui/core";
 import { Bar, Pie } from "react-chartjs-2";
 import { lightBlue, lightGreen, red } from "@material-ui/core/colors";
@@ -81,8 +82,15 @@ const ChartSelector = () => {
 
   return (
     <div>
+      <Typography
+        style={{ textAlign: "center" }}
+        variant="h6"
+        color="textSecondary"
+      >
+        Pick A Chart
+      </Typography>
       <div>
-        <FormControl className={classes.formControl}>
+        <FormControl style={{ width: "15rem" }} className={classes.formControl}>
           <InputLabel shrink id="demo-simple-select-label">
             Chart Type
           </InputLabel>
@@ -92,6 +100,7 @@ const ChartSelector = () => {
             value={selectedChart}
             className={classes.selectEmpty}
             displayEmpty
+            variant="outlined"
             onChange={handleChange}
           >
             <MenuItem value="bar">Bar Chart</MenuItem>

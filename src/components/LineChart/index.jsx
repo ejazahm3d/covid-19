@@ -42,8 +42,12 @@ const LineChart = () => {
 
   return (
     <div>
-      <Typography variant="h5" color="textSecondary">
-        Cases over time
+      <Typography
+        style={{ textAlign: "center" }}
+        variant="h6"
+        color="textSecondary"
+      >
+        Cases Over Time
       </Typography>
       <div style={{ width: "100%", margin: "1rem 1rem" }}>{lineChart}</div>
     </div>

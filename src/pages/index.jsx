@@ -9,7 +9,7 @@ import SummaryBlock from "../components/Blocks/Home/SummaryBlock";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    marginTop: "5rem",
+    marginTop: "2rem",
   },
   spacing: {
     marginBottom: "3rem",

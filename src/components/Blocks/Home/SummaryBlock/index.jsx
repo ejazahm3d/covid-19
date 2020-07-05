@@ -1,16 +1,21 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 import CovidSummary from "../../../CovidSummary";
 import GlobalSummaryTable from "../../../GlobalSummaryTable";
 
 const SummaryBlock = () => {
   return (
-    <Grid container justify="center">
-      <Grid item xs={12} sm={12} md={6}>
-        <CovidSummary />
-      </Grid>
-      <Grid item xs={12} sm={12} md={6}>
-        <GlobalSummaryTable />
+    <Grid item xs={12} sm={12} md={12} lg={12}>
+      <Typography style={{ marginBottom: "2rem" }} variant="h3">
+        Covid Summary
+      </Typography>
+      <Grid container justify="space-around">
+        <Grid item xs={12} sm={12} md={3}>
+          <CovidSummary />
+        </Grid>
+        <Grid item xs={12} sm={12} md={8}>
+          <GlobalSummaryTable />
+        </Grid>
       </Grid>
     </Grid>
   );
