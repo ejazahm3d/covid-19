@@ -111,7 +111,7 @@ const GlobalSummaryTable = () => {
     recovered: country.TotalRecovered,
     newRecovered: country.NewRecovered,
   }));
-  console.log(countries);
+
   return (
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
