@@ -1,6 +1,7 @@
 import React from "react";
 import { Grid, Typography } from "@material-ui/core";
 import { motion } from "framer-motion";
+import medicalImage from "./undraw_medical_research_qg4d.svg";
 
 const HeroBlock = () => {
   return (
@@ -29,7 +30,7 @@ const HeroBlock = () => {
           objectFit: "cover",
           marginBottom: "3rem",
         }}
-        src="/undraw_medical_research_qg4d.svg"
+        src={medicalImage}
         alt="Medical"
       />
     </Grid>
