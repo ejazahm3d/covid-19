@@ -22,6 +22,19 @@ export const fetchDataByCountryOrDefault = createAsyncThunk(
   }
 );
 
+//Global-Summary
+export const fetchGlobalSummaryData = createAsyncThunk(
+  "global-summary/fetchGlobalSummaryData",
+  async (thunkAPI) => {
+    try {
+      const response = await axios.get(`${BASE_URL_2nd}/summary`);
+      return response.data;
+    } catch (error) {
+      return error.data;
+    }
+  }
+);
+
 //Countries
 export const fetchCountries = createAsyncThunk(
   "countries/fetchCountries",

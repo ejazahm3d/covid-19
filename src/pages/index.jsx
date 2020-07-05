@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import Layout from "../components/Layout";
 import { makeStyles, Container, Grid } from "@material-ui/core";
-import LineChart from "../components/LineChart";
-import CovidSummary from "../components/CovidSummary";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchDataByCountryOrDefault } from "../store/actions";
 import CountryPicker from "../components/CountryPicker";
-import ChartSelector from "../components/ChartSelector";
+import ChartsBlock from "../components/Blocks/Home/ChartsBlock";
+import SummaryBlock from "../components/Blocks/Home/SummaryBlock";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,19 +32,9 @@ function Home() {
           <Grid item className={styles.spacing}>
             <CountryPicker />
           </Grid>
-          <Grid item sm={12}>
-            <Grid container justify="center">
-              <Grid sm={12} md={6} className={styles.spacing}>
-                <CovidSummary />
-              </Grid>
-              <Grid className={styles.spacing} sm={12} md={6}>
-                <ChartSelector />
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid item sm={12}>
-            <LineChart />
-          </Grid>
+
+          <SummaryBlock />
+          <ChartsBlock />
         </Grid>
       </Container>
     </Layout>
