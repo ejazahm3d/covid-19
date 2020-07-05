@@ -9,8 +9,8 @@ const SummaryBlock = () => {
       <Typography style={{ marginBottom: "3rem" }} variant="h4">
         Covid Summary
       </Typography>
-      <Grid container justify="space-around">
-        <Grid item xs={12} sm={12} md={8}>
+      <Grid container spacing={2} justify="space-around">
+        <Grid item xs={12} sm={12} md={9}>
           <GlobalSummaryTable />
         </Grid>
         <Grid item xs={12} sm={12} md={3}>

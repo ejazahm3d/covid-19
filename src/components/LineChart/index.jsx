@@ -49,7 +49,7 @@ const LineChart = () => {
       >
         Cases Over Time
       </Typography>
-      <div style={{ width: "100%", margin: "1rem 1rem" }}>{lineChart}</div>
+      <div style={{ width: "100%", margin: "" }}>{lineChart}</div>
     </div>
   );
 };

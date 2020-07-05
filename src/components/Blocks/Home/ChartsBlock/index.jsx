@@ -17,8 +17,8 @@ const ChartsBlock = () => {
           : "You are looking at World Stats. Select a specific country from above to see it's stats"}
       </Typography>
 
-      <Grid container justify="space-around">
-        <Grid item xs={12} sm={12} md={5}>
+      <Grid container spacing={2} justify="center">
+        <Grid item xs={12} sm={12} md={6}>
           <ChartSelector />
         </Grid>
         <Grid item xs={12} sm={12} md={6}>

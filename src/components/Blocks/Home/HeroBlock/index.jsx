@@ -26,7 +26,7 @@ const HeroBlock = () => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 2 }}
         style={{
-          maxWidth: "100%",
+          width: "60%",
           objectFit: "cover",
           marginBottom: "3rem",
         }}
