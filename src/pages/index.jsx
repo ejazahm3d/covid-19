@@ -29,10 +29,10 @@ function Home() {
     <Layout>
       <Container>
         <Grid container className={styles.root} justify="center">
-          <Grid item className={styles.spacing}>
+          <SummaryBlock />
+          <Grid item xs={12} sm={12} md={12} lg={12}>
             <CountryPicker />
           </Grid>
-          <SummaryBlock />
           <ChartsBlock />
         </Grid>
       </Container>

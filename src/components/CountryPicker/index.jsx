@@ -38,12 +38,8 @@ const Countries = () => {
   if (loading && !data && !error) return <div>Loading...</div>;
 
   return (
-    <div>
-      <Typography
-        style={{ textAlign: "center" }}
-        variant="h6"
-        color="textSecondary"
-      >
+    <>
+      <Typography variant="h6" color="textSecondary">
         Select Country
       </Typography>
       <FormControl className={classes.formControl}>
@@ -68,7 +64,7 @@ const Countries = () => {
           ))}
         </Select>
       </FormControl>
-    </div>
+    </>
   );
 };
 

@@ -5,8 +5,8 @@ import GlobalSummaryTable from "../../../GlobalSummaryTable";
 
 const SummaryBlock = () => {
   return (
-    <Grid item xs={12} sm={12} md={12} lg={12}>
-      <Typography style={{ marginBottom: "2rem" }} variant="h3">
+    <Grid item xs={12} sm={12} md={12} lg={12} style={{ marginBottom: "2rem" }}>
+      <Typography style={{ marginBottom: "3rem" }} variant="h3">
         Covid Summary
       </Typography>
       <Grid container justify="space-around">
