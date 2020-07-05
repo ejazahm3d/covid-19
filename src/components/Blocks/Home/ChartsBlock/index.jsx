@@ -6,10 +6,10 @@ import LineChart from "../../../LineChart";
 const ChartsBlock = () => {
   return (
     <Grid container justify="space-between">
-      <Grid item sm={12} md={5}>
+      <Grid item xs={12} sm={12} md={5}>
         <ChartSelector />
       </Grid>
-      <Grid item sm={12} md={6}>
+      <Grid item xs={12} sm={12} md={6}>
         <LineChart />
       </Grid>
     </Grid>

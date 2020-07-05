@@ -12,6 +12,7 @@ import {
   TablePagination,
   TableRow,
 } from "@material-ui/core";
+import { lightBlue, lightGreen, red, yellow } from "@material-ui/core/colors";
 import sortBy from "lodash.sortby";
 
 const useStyles = makeStyles({
@@ -25,7 +26,7 @@ const useStyles = makeStyles({
 
 const columns = [
   { id: "name", label: "Name", minWidth: 170 },
-  { id: "code", label: "ISO\u00a0Code", minWidth: 100 },
+  // { id: "code", label: "ISO\u00a0Code", minWidth: 100 },
   {
     id: "confirmed",
     label: "Total\u00a0Confirmed",
@@ -34,15 +35,43 @@ const columns = [
     format: (value) => value.toLocaleString("en-US"),
   },
   {
+    id: "newConfirmed",
+    label: "New\u00a0Confirmed",
+    minWidth: 170,
+    backgroundColor: yellow[100],
+    textColor: "black",
+    align: "right",
+    format: (value) => value.toLocaleString("en-US"),
+  },
+  {
     id: "recovered",
     label: "Total\u00a0Recovered",
     minWidth: 170,
+
+    align: "right",
+    format: (value) => value.toLocaleString("en-US"),
+  },
+  {
+    id: "newRecovered",
+    label: "New\u00a0Recovered",
+    minWidth: 170,
+    backgroundColor: lightGreen[100],
+    textColor: lightGreen[500],
     align: "right",
     format: (value) => value.toLocaleString("en-US"),
   },
   {
     id: "deaths",
     label: "Total\u00a0Deaths",
+    minWidth: 170,
+    align: "right",
+    format: (value) => value.toFixed(2),
+  },
+  {
+    id: "newDeaths",
+    label: "New\u00a0Deaths",
+    backgroundColor: red[100],
+    textColor: red[500],
     minWidth: 170,
     align: "right",
     format: (value) => value.toFixed(2),
@@ -76,8 +105,11 @@ const GlobalSummaryTable = () => {
     name: country.Country,
     code: country.CountryCode,
     confirmed: country.TotalConfirmed,
+    newConfirmed: country.NewConfirmed,
     deaths: country.TotalDeaths,
+    newDeaths: country.NewDeaths,
     recovered: country.TotalRecovered,
+    newRecovered: country.NewRecovered,
   }));
   console.log(countries);
   return (
@@ -87,7 +119,14 @@ const GlobalSummaryTable = () => {
           <TableHead>
             <TableRow>
               {columns.map((column) => (
-                <TableCell key={column.id} align={column.align}>
+                <TableCell
+                  style={{
+                    backgroundColor: column.backgroundColor,
+                    color: column.textColor,
+                  }}
+                  key={column.id}
+                  align={column.align}
+                >
                   {column.label}
                 </TableCell>
               ))}
@@ -102,7 +141,14 @@ const GlobalSummaryTable = () => {
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (
-                        <TableCell key={column.id} align={column.align}>
+                        <TableCell
+                          style={{
+                            backgroundColor: column.backgroundColor,
+                            color: column.textColor,
+                          }}
+                          key={column.id}
+                          align={column.align}
+                        >
                           {column.format && typeof value === "number"
                             ? column.format(value)
                             : value}
