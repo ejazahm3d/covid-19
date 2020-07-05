@@ -25,8 +25,7 @@ const useStyles = makeStyles({
 });
 
 const columns = [
-  { id: "name", label: "Name", minWidth: 170 },
-  // { id: "code", label: "ISO\u00a0Code", minWidth: 100 },
+  { id: "name", label: "Name", minWidth: 170, fontWeight: "bold" },
   {
     id: "confirmed",
     label: "Total\u00a0Confirmed",
@@ -65,7 +64,7 @@ const columns = [
     label: "Total\u00a0Deaths",
     minWidth: 170,
     align: "right",
-    format: (value) => value.toFixed(2),
+    format: (value) => value.toLocaleString("en-US"),
   },
   {
     id: "newDeaths",
@@ -74,7 +73,7 @@ const columns = [
     textColor: red[500],
     minWidth: 170,
     align: "right",
-    format: (value) => value.toFixed(2),
+    format: (value) => value.toLocaleString("en-US"),
   },
 ];
 
@@ -145,6 +144,7 @@ const GlobalSummaryTable = () => {
                           style={{
                             backgroundColor: column.backgroundColor,
                             color: column.textColor,
+                            fontWeight: column.fontWeight,
                           }}
                           key={column.id}
                           align={column.align}
