@@ -93,7 +93,7 @@ const ChartSelector = () => {
           </Select>
         </FormControl>
       </div>
-      <div style={{ width: "100%" }}>
+      <div style={{ width: "100%", margin: "1rem 1rem" }}>
         {selectedChart === "pie" ? pieChart : barChart}
       </div>
     </div>

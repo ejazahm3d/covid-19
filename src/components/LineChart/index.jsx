@@ -3,6 +3,7 @@ import { Line } from "react-chartjs-2";
 import { fetchDailyData } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { lightBlue, red } from "@material-ui/core/colors";
+import { Typography } from "@material-ui/core";
 
 const LineChart = () => {
   const dispatch = useDispatch();
@@ -16,7 +17,9 @@ const LineChart = () => {
   const lineChart = dailyData[0] ? (
     <Line
       data={{
-        labels: dailyData.map(({ date }) => new Date(date).toDateString()),
+        labels: dailyData.map(({ date }) =>
+          new Date(date).toLocaleDateString()
+        ),
         datasets: [
           {
             data: dailyData.map((data) => data.confirmed),
@@ -37,7 +40,14 @@ const LineChart = () => {
     />
   ) : null;
 
-  return <div style={{ width: "100%" }}>{lineChart}</div>;
+  return (
+    <div>
+      <Typography variant="h5" color="textSecondary">
+        Cases over time
+      </Typography>
+      <div style={{ width: "100%", margin: "1rem 1rem" }}>{lineChart}</div>
+    </div>
+  );
 };
 
 export default LineChart;

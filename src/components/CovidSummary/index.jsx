@@ -36,7 +36,7 @@ const CovidSummary = () => {
 
   return (
     <>
-      <Grid container spacing={3} justify="space-evenly">
+      <Grid container justify="space-around" alignItems="center">
         {cardsData.map((item) => (
           <CardItem key={item.name} cardItem={item} lastUpdate={lastUpdate} />
         ))}

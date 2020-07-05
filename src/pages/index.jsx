@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "5rem",
   },
   spacing: {
-    marginTop: "3rem",
+    marginBottom: "3rem",
   },
 }));
 
@@ -29,24 +29,24 @@ function Home() {
   return (
     <Layout>
       <Container>
-        <div className={styles.root}>
-          <section>
+        <Grid container className={styles.root} justify="center">
+          <Grid item className={styles.spacing}>
+            <CountryPicker />
+          </Grid>
+          <Grid item sm={12}>
             <Grid container justify="center">
-              <Grid sm={12} md={6}>
-                <CovidSummary className={styles.spacing} />
+              <Grid sm={12} md={6} className={styles.spacing}>
+                <CovidSummary />
               </Grid>
-              <Grid style={{ marginTop: "2rem" }} md={6}>
+              <Grid className={styles.spacing} sm={12} md={6}>
                 <ChartSelector />
               </Grid>
             </Grid>
-          </section>
-          <section className={styles.spacing}>
-            <CountryPicker />
-          </section>
-          <section className={styles.spacing}>
+          </Grid>
+          <Grid item sm={12}>
             <LineChart />
-          </section>
-        </div>
+          </Grid>
+        </Grid>
       </Container>
     </Layout>
   );
