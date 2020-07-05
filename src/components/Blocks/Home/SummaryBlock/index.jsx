@@ -10,11 +10,11 @@ const SummaryBlock = () => {
         Covid Summary
       </Typography>
       <Grid container justify="space-around">
-        <Grid item xs={12} sm={12} md={3}>
-          <CovidSummary />
-        </Grid>
         <Grid item xs={12} sm={12} md={8}>
           <GlobalSummaryTable />
+        </Grid>
+        <Grid item xs={12} sm={12} md={3}>
+          <CovidSummary />
         </Grid>
       </Grid>
     </Grid>
