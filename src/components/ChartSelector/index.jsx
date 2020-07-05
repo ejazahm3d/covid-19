@@ -49,7 +49,10 @@ const ChartSelector = () => {
       }}
       options={{
         legend: { display: false },
-        title: { display: true, text: `Current state in ${country}` },
+        title: {
+          display: true,
+          text: `Current state in ${country ? country : "World"}`,
+        },
       }}
     />
   ) : null;
@@ -68,7 +71,10 @@ const ChartSelector = () => {
       }}
       options={{
         legend: { display: false },
-        title: { display: true, text: `Current state in ${country}` },
+        title: {
+          display: true,
+          text: `Current state in ${country ? country : "World"}`,
+        },
       }}
     />
   ) : null;
