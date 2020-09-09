@@ -4,9 +4,9 @@ import {
   AppBar,
   Toolbar,
   Typography,
-  // IconButton,
+  IconButton,
 } from "@material-ui/core";
-// import { GitHub } from "@material-ui/icons";
+import { GitHub } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -30,14 +30,14 @@ export default function Navbar() {
           <Typography variant="h6" className={classes.title}>
             Covid-19 Tracker
           </Typography>
-          {/* <IconButton
+          <IconButton
             color="inherit"
-            href="https://github.com/ejazahm3d/covid-19"
+            href="https://github.com/ejazahm3d"
             target="_blank"
             rel="noopener"
           >
             <GitHub fontSize="large" />
-          </IconButton> */}
+          </IconButton>
         </Toolbar>
       </AppBar>
     </div>
